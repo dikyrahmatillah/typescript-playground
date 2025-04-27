@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/5.8.2/typescript.min.js"></script>
+    <link rel="stylesheet" data-name="vs/editor/editor.main"
+        href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.min.css">
+    <script>var require = { paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs' } };</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.nls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/editor/editor.main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>TypeScript Playground</h1>
+        <button id="dark-mode-toggle" title="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    <main>
+        <div class="container">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <h2>TypeScript</h2>
+                    <button id="copy-ts-btn" class="copy-btn" title="Copy TypeScript code">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+                <div id="typescript-editor" class="editor"></div>
+            </div>
+            <div class="editors-right">
+                <div class="editor-container">
+                    <div class="editor-header">
+                        <h2>JavaScript</h2>
+                        <button id="copy-js-btn" class="copy-btn" title="Copy JavaScript code">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <div id="javascript-editor" class="editor"></div>
+                </div>
+                <div class="editor-container">
+                    <div class="console-header">
+                        <h2>Console</h2>
+                        <div class="console-buttons">
+                            <button id="run-btn" title="Run code" class="run-btn">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                            <button id="clear-console-btn" title="Clear console">Clear</button>
+                        </div>
+                    </div>
+                    <div id="console-output" class="console"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="options">
+            <div class="option-group">
+                <label for="ts-target">Target:</label>
+                <select id="ts-target">
+                    <option value="ES3">ES3</option>
+                    <option value="ES5">ES5</option>
+                    <option value="ES2015" selected>ES2015</option>
+                    <option value="ES2016">ES2016</option>
+                    <option value="ES2017">ES2017</option>
+                    <option value="ES2018">ES2018</option>
+                    <option value="ES2019">ES2019</option>
+                    <option value="ES2020">ES2020</option>
+                    <option value="ES2021">ES2021</option>
+                    <option value="ES2022">ES2022</option>
+                    <option value="ES2023">ES2023</option>
+                    <option value="ES2024">ES2024</option>
+                    <option value="ESNext">ESNext</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label for="ts-module">Module:</label>
+                <select id="ts-module">
+                    <option value="None">None</option>
+                    <option value="CommonJS" selected>CommonJS</option>
+                    <option value="AMD">AMD</option>
+                    <option value="UMD">UMD</option>
+                    <option value="System">System</option>
+                    <option value="ES2015">ES2015</option>
+                    <option value="ES2020">ES2020</option>
+                    <option value="ES2022">ES2022</option>
+                    <option value="ESNext">ESNext</option>
+                    <option value="Node16">Node16</option>
+                    <option value="NodeNext">NodeNext</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label for="ts-strict">Strict:</label>
+                <input type="checkbox" id="ts-strict" checked>
+            </div>
+            <div class="option-group">
+                <label for="ts-no-implicit-any">No Implicit Any:</label>
+                <input type="checkbox" id="ts-no-implicit-any" checked>
+            </div>
+            <div class="option-group">
+                <label for="ts-remove-comments">Remove Comments:</label>
+                <input type="checkbox" id="ts-remove-comments">
+            </div>
+            <div class="option-group">
+                <label for="ts-decorators">Decorators:</label>
+                <input type="checkbox" id="ts-decorators">
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
