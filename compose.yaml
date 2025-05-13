@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  typescript-playground:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: typescript-playground:latest
+    container_name: typescript-playground
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount source code for development
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - typescript-network
+
+networks:
+  typescript-network:
+    driver: bridge
